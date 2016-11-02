@@ -38,6 +38,13 @@ class PluginEditor extends Component {
   constructor(props) {
     super(props);
 
+    if (false) {
+      return (
+        <div>Couldn't find the issue</div>
+      );
+    }
+    console.log('strange');
+
     const plugins = [this.props, ...this.resolvePlugins()];
     for (const plugin of plugins) {
       if (typeof plugin.initialize !== 'function') continue;
