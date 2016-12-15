@@ -31,7 +31,7 @@ export default class AlignmentTool extends React.Component {
   onVisibilityChanged = (visibleBlock) => {
     const boundingRect = this.props.store.getItem('boundingRect');
     const position = visibleBlock ? {
-      top: (boundingRect.top + window.scrollY) - toolbarHeight,
+      top: (window.scrollY - boundingRect.bottom ) - toolbarHeight,
       left: boundingRect.left + window.scrollX + (boundingRect.width / 2),
       transform: 'translate(-50%) scale(1)',
       transition: 'transform 0.15s cubic-bezier(.3,1.2,.2,1)',
